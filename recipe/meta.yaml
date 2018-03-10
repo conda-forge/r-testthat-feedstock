@@ -30,6 +30,9 @@ requirements:
     - r-digest
     - r-magrittr
     - r-praise
+    - r-cli
+    - r-rlang
+    - r-withr
     - posix                # [win]
     - {{native}}toolchain  # [win]
     - gcc                  # [not win]
@@ -41,6 +44,9 @@ requirements:
     - r-digest
     - r-magrittr
     - r-praise
+    - r-cli
+    - r-rlang
+    - r-withr
 
 test:
   commands:
@@ -57,3 +63,5 @@ extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
