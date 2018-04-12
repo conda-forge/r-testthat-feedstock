@@ -15,7 +15,7 @@ source:
   sha256: 3bc047ad1c4522104023d4fbbfc9aceed14d316fdb16865a514f26b3e628b494
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win32]
 
   rpaths:
@@ -25,28 +25,28 @@ build:
 requirements:
   build:
     - r-base
-    - r-r6
+    - r-r6 >=2.2.0
     - r-crayon
     - r-digest
     - r-magrittr
     - r-praise
     - r-cli
     - r-rlang
-    - r-withr
+    - r-withr >=2.0.0
     - posix                # [win]
     - {{native}}toolchain  # [win]
     - gcc                  # [not win]
 
   run:
     - r-base
-    - r-r6
+    - r-r6 >=2.2.0
     - r-crayon
     - r-digest
     - r-magrittr
     - r-praise
     - r-cli
     - r-rlang
-    - r-withr
+    - r-withr >=2.0.0
 
 test:
   commands:
