@@ -1,5 +1,4 @@
-{% set version = "2.0.0" %}
-
+{% set version = '2.0.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,57 +9,61 @@ package:
 source:
   fn: testthat_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/testthat_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/testthat/testthat_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/testthat_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/testthat/testthat_{{ version }}.tar.gz
   sha256: 3bc047ad1c4522104023d4fbbfc9aceed14d316fdb16865a514f26b3e628b494
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 3
   skip: true  # [win32]
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - posix                # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
-    - {{ compiler('cxx') }}        # [unix]
-    - {{ compiler('m2w64_cxx') }}  # [win]
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
   host:
     - r-base
     - r-r6 >=2.2.0
+    - r-cli
     - r-crayon
     - r-digest
     - r-magrittr
     - r-praise
-    - r-cli
     - r-rlang
     - r-withr >=2.0.0
-
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-r6 >=2.2.0
+    - r-cli
     - r-crayon
     - r-digest
     - r-magrittr
     - r-praise
-    - r-cli
     - r-rlang
     - r-withr >=2.0.0
 
 test:
   commands:
-    - $R -e "library('testthat')"  # [not win]
+    - $R -e "library('testthat')"           # [not win]
     - "\"%R%\" -e \"library('testthat')\""  # [win]
 
 about:
-  home: https://github.com/hadley/testthat
+  home: http://testthat.r-lib.org, https://github.com/r-lib/testthat
   license: MIT
-  summary: A unit testing system designed to be fun, flexible and easy to set up.
+  summary: Software testing is important, but, in part because it is  frustrating and boring,
+    many of us avoid it. 'testthat' is a testing framework  for R that is easy learn
+    and use, and integrates with your existing 'workflow'.
   license_family: MIT
 
 extra:
@@ -69,3 +72,4 @@ extra:
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
