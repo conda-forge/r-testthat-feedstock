@@ -7,7 +7,7 @@ Package license: MIT
 
 Feedstock license: BSD 3-Clause
 
-Summary: Software testing is important, but, in part because it is  frustrating and boring, many of us avoid it. 'testthat' is a testing framework  for R that is easy to learn and use, and integrates with your existing 'workflow'.
+Summary: Software testing is important, but, in part because it is frustrating and boring, many of us avoid it. 'testthat' is a testing framework for R that is easy to learn and use, and integrates with your existing 'workflow'.
 
 
 
@@ -76,7 +76,12 @@ Current build status
       </details>
     </td>
   </tr>
-![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
+  <tr>
+    <td>Linux_ppc64le</td>
+    <td>
+      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
+    </td>
+  </tr>
 </table>
 
 Current release info
