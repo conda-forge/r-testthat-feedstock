@@ -1,4 +1,4 @@
-{% set version = "2.3.1" %}
+{% set version = "2.3.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/testthat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/testthat/testthat_{{ version }}.tar.gz
-  sha256: 7eae9574b8baf80a95b529aff982fb691794bf211c8bf58ce431d9771b641d55
+  sha256: 1a268d8df07f7cd8d282d03bb96ac2d96a24a95c9aa52f4cca5138a09dd8e06c
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -66,12 +66,11 @@ test:
 about:
   home: http://testthat.r-lib.org, https://github.com/r-lib/testthat
   license: MIT
-  summary: Software testing is important, but, in part because it is frustrating and boring,
-    many of us avoid it. 'testthat' is a testing framework for R that is easy to learn
-    and use, and integrates with your existing 'workflow'.
+  summary: Software testing is important, but, in part because it is frustrating and boring, many of us avoid it. 'testthat' is a testing framework for R that is
+    easy to learn and use, and integrates with your existing 'workflow'.
   license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
 
 extra:
