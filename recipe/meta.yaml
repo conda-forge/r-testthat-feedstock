@@ -1,4 +1,4 @@
-{% set version = "3.1.0" %}
+{% set version = "3.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/testthat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/testthat/testthat_{{ version }}.tar.gz
-  sha256: e714b105891a766d03d5bab09d705b1f6c23f04db56dfe310bff8cfa00464987
+  sha256: e6755fb4f5388751af952edfd555533bb55d6252606f6fcef07bdb6268c8cf80
 
 build:
   merge_build_host: true  # [win]
