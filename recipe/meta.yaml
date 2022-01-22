@@ -1,4 +1,4 @@
-{% set version = "3.1.1" %}
+{% set version = "3.1.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/testthat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/testthat/testthat_{{ version }}.tar.gz
-  sha256: e6755fb4f5388751af952edfd555533bb55d6252606f6fcef07bdb6268c8cf80
+  sha256: ed41a6168ca22869b6aebe1e5865bb2f5338a7c35ca0a13cf69ac2f5c6aeb659
 
 build:
   merge_build_host: true  # [win]
@@ -24,6 +24,7 @@ requirements:
     - cross-r-base {{ r_base }}  # [build_platform != target_platform]
     - r-rlang >=0.4.1            # [build_platform != target_platform]
     - r-magrittr                 # [build_platform != target_platform]
+    - r-brio                     # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ compiler('cxx') }}            # [not win]
