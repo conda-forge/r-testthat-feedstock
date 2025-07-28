@@ -7,20 +7,24 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-testthat-feed
 About r-testthat
 ----------------
 
-Home: http://testthat.r-lib.org, https://github.com/r-lib/testthat
+Home: http://testthat.r-lib.org
 
 Package license: MIT
 
 Summary: Software testing is important, but, in part because it is frustrating and boring, many of us avoid it. 'testthat' is a testing framework for R that is easy to learn and use, and integrates with your existing 'workflow'.
+
+Development: https://github.com/r-lib/testthat
 
 About r-testthat
 ----------------
 
-Home: http://testthat.r-lib.org, https://github.com/r-lib/testthat
+Home: http://testthat.r-lib.org
 
 Package license: MIT
 
 Summary: Software testing is important, but, in part because it is frustrating and boring, many of us avoid it. 'testthat' is a testing framework for R that is easy to learn and use, and integrates with your existing 'workflow'.
+
+Development: https://github.com/r-lib/testthat
 
 Current build status
 ====================
