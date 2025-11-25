@@ -1,4 +1,4 @@
-{% set version = "3.3.0" %}
+{% set version = "3.3.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/testthat_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/testthat/testthat_{{ version }}.tar.gz
-  sha256: cb6242958de41afe82b6aad566b7628f8864f61696780b7eacc709e946685620
+  sha256: 028846f23c79b796545ac5d8e5701efbb9150745b9b2d6d8f2257c30073c8db6
 
 build:
   number: 0
